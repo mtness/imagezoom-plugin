@@ -1,22 +1,14 @@
 /**
- * imagezoom
+ * ImageZoom Plugin
  * http://0401morita.github.io/imagezoom-plugin
  * MIT licensed
  *
-<<<<<<< HEAD
-<<<<<<< Updated upstream
- * Copyright (C) 2014 A project by Yosuke Morita
-=======
- * Copyright (C) 2014 https://github.com/0401morita/imagezoom-plugin.git - A project by Yosuke Morita
->>>>>>> Stashed changes
-=======
  * Copyright (C) 2014 http://0401morita.github.io/imagezoom-plugin A project by Yosuke Morita
->>>>>>> FETCH_HEAD
  */
 
 (function($){
   var defaults = {
-    cursorColor:'255,255,255',
+    cursorcolor:'255,255,255',
     opacity:0.5,
     cursor:'crosshair',
     zindex:2147483647,
@@ -77,7 +69,7 @@
           'position':'absolute',
           'width':cursorSize[0],
           'height':cursorSize[1],
-          'background-color':'rgb('+settings.cursorColor+')',
+          'background-color':'rgb('+settings.cursorcolor+')',
           'z-index':settings.zindex,
           'opacity':settings.opacity,
           'cursor':settings.cursor
