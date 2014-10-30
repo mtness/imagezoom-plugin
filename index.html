@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
 <script src="imagezoom.js"></script>
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -21,24 +21,100 @@
 </head>
 <body>
 <header>
+<div class="container">
+<h1 class="text-center">ImageZoom Plugin</h1>
+</div>
 </header>
 
 <main>
 <div class="container">
 <section class="section">
+  <h3>DEFAULT SETTING</h3>
+  <p class="mbs">data-imagezoom="true"に指定するとマウスオーバーする画像を拡大表示します</p>
   <div class="thumb-image">
     <img src="sampleimage/1.jpg" data-imagezoom="true">
   </div>
+  <code>&lt;img src="sampleimage/1.jpg" data-imagezoom="true"&gt;</code>
 </section>
+
 <section class="section">
+  <h3>ANOTHER IMAGE</h3>
+  <p class="mbs">data-imagezoomに指定された画像を拡大表示します。高画質の同画像を表示する場合に便利です。</p>
   <div class="thumb-image">
     <img src="sampleimage/2.jpg" data-imagezoom="sampleimage/1.jpg">
-  </div>>
+  </div>
+
+  <code>&lt;img src="sampleimage/2.jpg" data-imagezoom="sampleimage/1.jpg"&gt;</code>
+</section>
+
+<section class="section">
+  <h3>ZOOMVIEW SIZE</h3>
+  <p class="mbs">data-zoomviewsizeに指定されたサイズの拡大ビューを表示します。</p>
+  <div class="thumb-image">
+    <img src="sampleimage/1.jpg" data-imagezoom="true" data-zoomviewsize="[300,500]">
+  </div>
+  <code>&lt;img src="sampleimage/1.jpg" data-imagezoom="true" data-zoomviewsize="[300,500]"&gt;</code>
+</section>
+
+<section class="section text-right clearfix">
+  <h3>ZOOMVIEW POSITION</h3>
+  <p class="mbs">data-zoomviewpositionに[left]か[right]を指定された方向に拡大ビューを表示します。デフォルトは[right]です。<br />また、data-zoomviewmarginに数値を指定することで拡大ビューと画像のマージンを設定できます。</p>
+  <div class="clearfix">
+  <div class="thumb-image right">
+    <img src="sampleimage/2.jpg" data-imagezoom="true" data-zoomviewsize="[500,500]" data-zoomviewposition="left" data-zoomviewmargin="10">
+  </div>
+  </div>
+  
+  <code class="text-left">&lt;img src="sampleimage/1.jpg" data-imagezoom="true" data-zoomviewposition="left" data-zoomviewmargin="20"&gt;</code>
+</section>
+
+<section class="section">
+  <h3>ZOOMLEVEL</h3>
+  <p class="mbs">data-magnificationに数値を指定すると拡大率を変更できます。デフォルトの倍率は3です。</p>
+  <div class="thumb-image">
+    <img src="sampleimage/1.jpg" data-imagezoom="true" data-magnification="10">
+  </div>
+  <code>&lt;img src="sampleimage/1.jpg" data-imagezoom="true" data-magnification="10"&gt;</code>
+</section>
+
+<section class="section">
+  <h3>DESIGN</h3>
+  <p class="mbs">
+  data-zoomviewborderでズームビューにボーダーを指定できます。<br />
+  data-cursorでカーソル指定ができます。<br />
+  data-cursorcolorでカーソルカラーを指定できます。<br />
+  data-opacityでカーソルの透明度を指定できます。
+  </p>
+  <div class="thumb-image">
+    <img src="sampleimage/2.jpg" data-imagezoom="true" data-zoomviewborder="6px solid #000" data-cursor="ponter" data-cursorcolor="52,152,219" data-opacity="0.9">
+  </div>
+  <code>&lt;img src="sampleimage/2.jpg" data-imagezoom="true" data-zoomviewborder="6px solid #000" data-cursor="ponter" data-cursorcolor="52,152,219" data-opacity="0.9"&gt;</code>
+</section>
+
+<section class="section">
+  <h3>jQuery CODE</h3>
+  <p class="mbs">jQueryでのオプション指定。data属性の指定が優先されます。</p>
+  <code>
+  &lt;script&gt;<br />
+    $('[data-imagezoom]').imageZoom({<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;cursorcolor:'255,255,255', //カーソル背景色<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;opacity:0.5, //カーソル透明度<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;cursor:'crosshair', //カーソルタイプ<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;zindex:2147483647, //カーソルレイヤー<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;zoomviewsize:[500,500], //ズームビューサイズ<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;zoomviewposition:'right', //ズームビューの位置指定[left or right]<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;zoomviewmargin:10, //ズームビューと画像のマージン<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;zoomviewborder:'1px solid #000', //ズームビューのボーダースタイル<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;magnification:3 //拡大率<br />
+    });<br />
+  &lt;/script&gt;
+  </code>
 </section>
 </div>
 </main>
 
 <footer>
+<p class="copyright">Copyright (C) 2014 project by Yosuke Morita</p>
 </footer>
 </body>
 </html>

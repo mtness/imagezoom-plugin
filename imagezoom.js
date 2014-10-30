@@ -3,20 +3,20 @@
  * https://github.com/0401morita/imagezoom-plugin.git
  * MIT licensed
  *
- * Copyright (C) 2014 A project by Yosuke Morita
+ * Copyright (C) 2014 project by Yosuke Morita
  */
 
 (function($){
   var defaults = {
-    cursorColor:'255,255,255',
+    cursorcolor:'255,255,255',
     opacity:0.5,
     cursor:'crosshair',
     zindex:2147483647,
-    zoomviewsize:[480,395],
+    zoomviewsize:[500,500],
     zoomviewposition:'right',
     zoomviewmargin:10,
     zoomviewborder:'none',
-    magnification:1.925
+    magnification:3
   };
 
   var imagezoomCursor,imagezoomView,settings,imageWidth,imageHeight,offset;
@@ -69,7 +69,7 @@
           'position':'absolute',
           'width':cursorSize[0],
           'height':cursorSize[1],
-          'background-color':'rgb('+settings.cursorColor+')',
+          'background-color':'rgb('+settings.cursorcolor+')',
           'z-index':settings.zindex,
           'opacity':settings.opacity,
           'cursor':settings.cursor
