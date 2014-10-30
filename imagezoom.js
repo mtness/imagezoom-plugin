@@ -1,9 +1,9 @@
 /**
  * imagezoom
- * https://github.com/alvarotrigo/fullPage.js
+ * https://github.com/0401morita/imagezoom-plugin.git
  * MIT licensed
  *
- * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ * Copyright (C) 2014 A project by Yosuke Morita
  */
 
 (function($){
