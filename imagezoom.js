@@ -3,7 +3,11 @@
  * https://github.com/0401morita/imagezoom-plugin.git
  * MIT licensed
  *
+<<<<<<< Updated upstream
  * Copyright (C) 2014 A project by Yosuke Morita
+=======
+ * Copyright (C) 2014 https://github.com/0401morita/imagezoom-plugin.git - A project by Yosuke Morita
+>>>>>>> Stashed changes
  */
 
 (function($){
